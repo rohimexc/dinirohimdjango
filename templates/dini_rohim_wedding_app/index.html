@@ -1,0 +1,822 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dini dan Rohim Wedding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  <!-- simplyCountdown -->
+  <link rel="stylesheet" href="{% static 'countdown/simplyCountdown.theme.default.css' %}" />
+  <script src="{% static 'countdown/simplyCountdown.min.js' %}"></script>
+  
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+    rel="stylesheet">
+  
+
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+  #luffy-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--pink);
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  #luffy-button .button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  
+  #luffy-button .button-text {
+    z-index: 5;
+  }
+  
+  #luffy-button .button-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #luffy-button .button-animation img {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: auto;
+    transform: translateX(-110%);
+    transition: transform 0.5s;
+  }
+  
+  #luffy-button.clicked .button-animation img {
+    transform: translateX(180%);
+  }
+  
+  @keyframes changeColor {
+    0% {
+      background-color: var(--pink);
+    }
+    50% {
+      background-color: white;
+    }
+    100% {
+      background-color: white;
+      color:var(--pink);
+    }
+  }
+  </style>
+  
+
+<body>
+  
+
+  <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+    <img src="{% static 'img/kapal-luffy.png' %}" class="kapal-luffy" alt="">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+    <div class="wave wave-4"></div>
+    <main>
+      <div class="card text-center">
+        
+        <div class="card-body">
+          <h4>The Wedding of</h4>
+          <h1>Dini dan Rohim</h1>
+          <h5>Kepada Yth. Bapak/Ibu/Saudara(i)</h5>
+          <h4><span>Bapak/Ibu/Saudara/i</span></h4>
+          <h5>Di Tempat</h5>
+          <p>Mohon maaf apabila terdapat kesalahan dalam penulisan nama atau gelar</p>
+          
+          
+          <a href="#home" id="luffy-button" class="btn btn-lg mt-4" onClick="enableScroll()">
+            <div class="button-content">
+              <div class="button-text">Lihat Undangan</div>
+              <div class="button-animation">
+                <img src="{% static 'img/kapal.png' %}" style="width:60px" alt="Luffy's ship">
+              </div>
+            </div>
+          </a>
+          
+          <script>
+          const button = document.getElementById("luffy-button");
+          
+          button.addEventListener("click", function() {
+            button.classList.add("clicked");
+            setTimeout(function() {
+              button.classList.remove("clicked");
+            }, 500);
+          });
+          
+          button.addEventListener("animationend", function() {
+            button.style.animation = "";
+          });
+          
+          button.addEventListener("mousedown", function() {
+            button.style.animation = "changeColor 1s";
+          });
+          
+          function enableScroll() {
+            // Your scroll enable logic here
+          }
+          </script>
+        </div>
+      </div>
+
+    </main>
+
+  </section>
+
+<nav class="navbar navbar-expand-md bg-transparent mynavbar">
+    <div class="container d-block d-md-none" data-aos="fade-up">
+      <div class="nav nav-pills">
+        <a class="nav-link" href="#home"><i class="bi bi-house-heart"></i></a>
+        <a class="nav-link" href="#info"><i class="bi bi-megaphone"></i></a>
+        <a class="nav-link" href="#story"><i class="bi bi-clock-history"></i></a>
+        <a class="nav-link" href="#gallery"><i class="bi bi-camera"></i></a>
+        <a class="nav-link" href="#rsvp"><i class="bi bi-postcard-heart"></i></a>
+        <a class="nav-link" href="#gifts"><i class="bi bi-box2-heart"></i></a>
+        
+    </div>
+    </div>
+    <div class="container d-none d-md-flex" data-aos="fade-up">
+        <a class="navbar-brand" href="#">Himyun</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Himyun</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="navbar-nav ms-auto nav-pills">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#info">Info</a>
+                    <a class="nav-link" href="#story">Story</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                    <a class="nav-link" href="#rsvp">RSVP</a>
+                    <a class="nav-link" href="#gifts">Gifts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+
+  <section id="home" class="home">
+    <div class="sakura-left"><img src="{% static 'img/sakura-left.png' %}" data-aos="fade-right" data-aos-delay="200" alt=""></div>
+    <div class="sakura-right"><img src="{% static 'img/sakura-right.png' %}" data-aos="fade-left" data-aos-delay="200" alt=""></div>
+    <div class="container" data-aos="fade-up">
+      
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2>Acara Pernikahan</h2>
+          <p>Kami akan melangsungkan resepsi pernikahan dalam:</p>
+          
+          <div class="simply-countdown mb-2"></div>
+          <h3 class="mt-4">02 Juni 2024 M/25 Dzulqaidah 1445 H</h3>
+          <a type="button" class="btn btn-pink mb-4" target="_blank" href="https://calendar.app.google/FWsnNPdG8MzgpmgXA"><i class="bi bi-bell"></i>Ingatkan Saya</a>
+          
+        </div>
+        <div class="justify-content-center ayat mt-3">
+          <div class="box text-center">
+            <h2 class="text-center">Ar-Rum Ayat 21</h2>
+            <span class="text-center arab">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ 
+                <span class="text-secondary-500 dark:text-secondary-300">
+                  ۝٢١
+                </span>
+            </span>
+            <p class="text-justify arti">
+                "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row pt-5">
+        <h3 class="text-center text-salam">Assalamu'alaikum Warahmatullah Wabarakatuh</h3>
+        <p class="text-center text-ridho">Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara pernikahan anak kami :</p>
+        <div class="col-left col-md-6 col-lg-6 col-sm-12">
+          <div class="card">
+            <span class="heart"><i class="bi bi-heart-fill"></i></span>
+            <div class="content">
+              <h2>Dini Dwi Yunia, S.Si.</h2><a class="ig-pengantin" href="https://instagram.com/dinidwyn"><i class="bi bi-instagram"></i><p> @dinidwyn</p></a>
+              <p>Putri Sulung</p>
+              <a class="orangtua-pengantin" href="#">dari Bpk. Agus Yuliadi dan Ibu Sariani</a>
+
+            </div>
+            <img src="{% static 'img/dini-rm.png' %}" class="dini" alt="">
+          </div>
+        </div>
+        <div class="col-right col-md-6 col-lg-6 col-sm-12">
+          <div class="card-right">
+            <span class="heart"><i class="bi bi-heart-fill"></i></span>
+            <div class="content">
+              <h2>Abdul Rohim, S.Mat.</h2><a class="ig-pengantin" href="https://instagram.com/rohim.exc"><p>@rohimexc </p><i class="bi bi-instagram"></i></a>
+              <p>Putra Bungsu</p>
+              <a class="orangtua-pengantin" href="#">dari Bpk. Abdul Rahman S. dan Ibu Nirma</a>
+
+            </div>
+            <img src="{% static 'img/rohim-rm.png' %}" class="dini" alt="">
+          </div>
+        </div>
+
+      </div>
+
+
+      
+    </div>
+  </section>
+
+
+  <section id="info" class="info">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+    <!-- <div class="snow">
+    </div> -->
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="text-center">
+          <h2>Informasi Acara</h2>
+          <div class="row justify-content-center align-items-center">
+            <div class="card akad d-flex" data-aos="zoom-in" data-aos-delay="100">
+              <div class="box">
+                <div class="content">
+                    <h2>Akad Nikah</h2>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col" style="width: 30%;">
+                        <p>Juni</p>
+                      </div>
+                      <div class="col day" style="width: 40%;">
+                        <p>02</p>
+                        <div class="row align-items-center justify-content-center">
+                          <p class="time">10.00 WITA - Selesai</p>
+                        </div>
+                      </div>
+                      <div class="col" style="width: 30%;">
+                        <p>2024</p>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                        <p class="alamat">Dusun Bulokus, Desa Ginunggung, Kec. Galang, Tolitoli-Sulawesi Tengah</p>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/GLqy8vdstdFg8j8SA" type="button" target="_blank" class="btn btn-pink">lihat lokasi<a>
+                </div>
+              </div>
+              <div class="clock">
+                <div class="second">
+                </div>
+                <div class="minute">
+                </div>
+              </div>
+            </div>
+            <div class="card resepsi d-flex" data-aos="zoom-in" data-aos-delay="200">
+              <div class="box">
+                <div class="content">
+                    <h2>Resepsi</h2>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-4" style="width: 30%;">
+                        <p>Juni</p>
+                      </div>
+                      <div class="col-4 day" style="width: 40%;">
+                        <p>02</p>
+                        <div class="row align-items-center justify-content-center">
+                          <p class="time">19.30 WITA - Selesai</p>
+                        </div>
+                      </div>
+                      <div class="col-4" style="width: 30%;">
+                        <p>2024</p>
+                      </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                        <p class="alamat">Dusun Bulokus, Desa Ginunggung, Kec. Galang, Tolitoli-Sulawesi Tengah</p>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/GLqy8vdstdFg8j8SA" type="button" target="_blank" class="btn btn-pink">Lihat Lokasi</a>
+                </div>
+              </div>
+              <div class="clock">
+                <div class="second">
+                </div>
+                <div class="minute">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+    <div id="sakura"></div>
+    <div class="container" data-aos="fade-up">
+      
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Bagaimana Cinta Kami Bersemi</span>
+          <h2>Cerita Kami</h2>
+          <p>Sekilas kisah dari awal jumpa hingga pada titik berbahagia ini</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ul class="timeline">
+            <li data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-image" style="background-image: url({% static 'img/gallery/awal_jumpa.JPG' %});"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Awal Bertemu</h3>
+                  <span>27 Agustus 2018</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Menjalani awal perkuliahan sebagai Mahasiswa pada kelas gabungan di Fakultas MIPA, 
+                    mempertemukan kami dari program studi yang berbeda.
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li class="timeline-inverted" data-aos="fade-up" data-aos-delay="200">
+              <div class="timeline-image" style="background-image: url({% static 'img/gallery/jadian.JPG' %});"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Kisah Dimulai</h3>
+                  <span>5 September 2018</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Setelah seminggu mencoba untuk kenal lebih jauh, pada akhirnya Waktu yang tepat itu tiba untuk
+                    Rohim mengutarakan rasa melalui cara yang tidak biasa, yah sebagai seorang pramuka menembak seorang jurusan
+                    kimia, sandi dan unsur menjadi alat untuk memikat hatinya.
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li data-aos="fade-up" data-aos-delay="300">
+              <div class="timeline-image" style="background-image: url({% static 'img/gallery/lamaran.JPG' %});"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Menetapkan Komitmen</h3>
+                  <span>18 Januari 2024</span>
+                </div>
+                <div class="timeline-body">
+                  <p>
+                  Hampir 6 tahun kami lalui bersama, memulai segala macam kisah sebagai Mahasiswa
+                  di tanah rantau mulai dari Perkuliahan sampai Pekerjaan, tentunya
+                  suka dan duka, hancur dan gembira, putus dan nyambung yang pada akhirnya menguatkan
+                  kami pada komitmen melangkah ke tahap yang lebih serius.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="filter" class="filter">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <h2 class="text-center">Filter</h2>
+        <div class="card border-pink text-center" onclick="window.location.href = 'https://www.instagram.com/ar/1635743663845116'">
+        </div>
+      </div>
+      <script>
+        const images = [
+          "{% static 'img/filter-image-1.png' %}",
+          "{% static 'img/filter-image-2.png' %}",
+          "{% static 'img/filter-image-3.png' %}",
+        ];
+
+        let currentIndex = 0;
+        const card = document.querySelector('.filter .card');
+
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          card.style.backgroundImage = `url('${images[currentIndex]}')`;
+        }, 2000);
+      </script>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Memori Kisah Kami</span>
+          <h2>Galeri Foto</h2>
+          <p>Mengenang perjalanan kami di Puncak Bromo</p>
+        </div>
+      </div>
+      <!--
+      <div class="box">
+        <span style="--i:1"><img src="{% static 'img/gallery/1.JPG' %}"></span>
+        <span style="--i:2"><img src="{% static 'img/gallery/2.JPG' %}"></span>
+        <span style="--i:3"><img src="{% static 'img/gallery/3.JPG' %}"></span>
+        <span style="--i:4"><img src="{% static 'img/gallery/4.JPG' %}"></span>
+        <span style="--i:5"><img src="{% static 'img/gallery/5.JPG' %}"></span>
+        <span style="--i:6"><img src="{% static 'img/gallery/6.JPG' %}"></span>
+      </div> -->
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block" src="{% static 'img/gallery/1.JPG' %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="{% static 'img/gallery/2.JPG' %}" loading="lazy" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="{% static 'img/gallery/3.JPG' %}" loading="lazy" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="{% static 'img/gallery/4.JPG' %}" loading="lazy" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="{% static 'img/gallery/5.JPG' %}" loading="lazy" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="{% static 'img/gallery/6.JPG' %}" loading="lazy" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"></script>
+      
+    
+
+    
+    </div>
+  </section>
+
+  <section id="rsvp" class="rsvp">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+    <div class="container justify-content-center" data-aos="fade-up">
+      
+      <div class="row justify-content-center">
+        <div class="text-center">
+          <h2>Konfirmasi Kehadiran</h2>
+          <p>Konfirmasi kamu sangat berarti untuk suksesnya acara kami</p>
+        </div>
+      </div>
+      <div class="form mt-3 mx-auto">
+        <div class="box">
+          <form class="row row-cols-md-auto g-3 align-items-center justify-content-center p-3" method="POST" action="" >
+            {% csrf_token %}
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="jumlah" class="form-label">Jumlah</label>
+                <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="status" class="form-label">Konfirmasi</label>
+                <select name="status" id="status" class="form-select">
+                  <option selected>Pilih salah satu</option>
+                  <option value="Hadir">Hadir</option>
+                  <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Pesan</label>
+                <input type="text" class="form-control" id="pesan" name="pesan">
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus"></i>Kirim</button>
+            </div>
+          </form>
+          <div class="chat_container">
+            <div class="job-box">
+              <div class="job-box-filter">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                  <label>Show 
+                  <select name="datatable_length" class="form-control input-sm">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="500">500</option>
+                  </select>
+                  entries</label>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="filter-search-box text-right">
+                      <label>Search:<input type="search" class="form-control input-sm" placeholder=""></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inbox-message">
+                <ul>
+                  {% for data in kehadiran %}
+                  <li>
+                    <a href="#rsvp">
+                      <div class="message-avatar">
+                        <img src="{% static 'img/HY.png' %}" alt="">
+                      </div>
+                      <div class="message-body">
+                        <div class="message-body-heading">
+                          <h5>{{data.nama}}</h5>
+                          {% if data.konfirmasi == "Tidak Hadir" %}
+                          <span class="important bg-danger">{{data.konfirmasi}}</span>
+                          {% else %}
+                          <span class="important bg-primary">{{data.konfirmasi}}</span>
+                          {% endif %}
+                        </div>
+                        <p>{{data.pesan}}</p>
+                      </div>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gifts" class="gifts">
+    <img src="{% static 'img/sakura-left.png' %}" class="kiri-atas" alt="">
+    <img src="{% static 'img/sakura-right.png' %}" class="kanan-atas" alt="">
+    
+    <div class="container" data-aos="fade-up">
+      
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center warnapink">
+          <span>ungkapan tanda kasih</span>
+          <h2>Wedding Gift</h2>
+          <p>Do'a restu anda merupakan karunia yang sangat berarti bagi kami. Jika memberi merupakan tanda
+            kasih anda, anda memberi kado secara cashless.
+          </p>
+        </div>
+      </div>
+      
+
+      <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+          <ul class="list-group">
+            <div class="btn-group-vertical">
+              <button type="button" class="btn btn-outline-pink" onclick="copyText('bri')"><span><img src="{% static 'img/bri.svg' %}" style="height: 40px;" alt=""></span><p id="bri">Dini Dwi Yunia - 022701045960504</p></button>
+              <button type="button" class="btn btn-outline-pink" onclick="copyText('bsi')"><span><img src="{% static 'img/bsi.svg' %}" style="height: 30px;" alt=""></span><p id="bsi">Dini Dwi Yunia - 7195331248</p></button>
+              <button type="button" class="btn btn-outline-pink" onclick="copyText('bni')"><span><img src="{% static 'img/bni.svg' %}" style="height: 27px;" alt=""></span><p id="bni">Abdul Rohim - 1815495739</p></button>
+            </div>
+            <script>
+              function copyText(id) {
+                  var text = document.getElementById(id).innerText; // Mengambil teks dari elemen dengan id yang diberikan
+                  navigator.clipboard.writeText(text); // Menyalin teks ke clipboard
+                  alert("Text copied: " + text); // Menampilkan alert
+              }
+            </script>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="row tm">
+        
+        <img src="{% static 'img/turut mengundang-left.png' %}" class="tm-left" alt="">
+        <img src="{% static 'img/turut mengundang-right.png' %}" class="tm-right" alt="">
+        <img src="{% static 'img/turut mengundang-center.png' %}" class="tm-center" alt="">
+        <div>
+          <img src="{% static 'img/turut mengundang-frame.png' %}" class="tm-frame" alt="">
+          <h2>Turut Mengundang</h2>
+          <ul class="square">
+            <li>Hi. Anwar Lihawa, S.Ap (Kepala Desa Ginunggung)</li>
+            <li>Djumalang/Indorawangi</li>
+            <li>Masri A. Impa, S.Sos.</li>
+            <li>Irwan</li>
+            <li>Anuardin B. Kalamentong</li>
+            <li>Sahrin T. Kalamentong</li>
+            <li>Husdi Isol Nati</li>
+            <li>Lasakke</li>
+            
+            <li class="mt-4">Masriansyah (Lurah Muara Jawa Pesisir)</li>
+            <li>A. Cading (Lurah Macanre)</li>
+            <li>Keluarga Besar Seneng-Timang</li>
+            <li>Keluarga Mana-Hawa</li>
+            <li>Pusat MBKM UNTAD</li>
+            <li>DKM UNTAD</li>
+          </ul>
+          <img src="{% static 'img/D.png' %}" class="tm-d" alt="">
+          <img src="{% static 'img/LOVE.png' %}" class="tm-l" alt="">
+          <img src="{% static 'img/R.png' %}" class="tm-r" alt="">
+        </div>
+      </div>
+    
+    <div class="row footer">
+      <div class="col text-center">
+
+        <small class="block">&copy; 2024 Dini dan Rohim Wedding. All Rights Reserved.</small>
+        <small class="block">Design by <a href="https://instagram.com/rohim.exc">@rohimexc</a>.</small>
+
+        <ul class="mt-3">
+          
+          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="#"><i class="bi bi-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div id="audio-container">
+    <audio id="song" autoplay loop>
+      <source src="{% static 'audio/save-and-sound.mp3' %}" type="audio/mp3">
+    </audio>
+
+    <div class="audio-icon-wrapper" style="display: none;">
+
+      <div class="tengkorak"></div>
+      <div class="tengkorak-close" style="display: none;"></div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></>
+
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+  <script>
+    simplyCountdown('.simply-countdown', {
+      year: 2024, // required
+      month: 6, // required
+      day: 2, // required
+      hours: 8, // Default is 0 [0-23] integer
+      words: { //words displayed into the countdown
+        days: { singular: 'hari', plural: 'hari' },
+        hours: { singular: 'jam', plural: 'jam' },
+        minutes: { singular: 'menit', plural: 'menit' },
+        seconds: { singular: 'detik', plural: 'detik' }
+      },
+    });
+  </script>
+
+  <script>
+    const stickyTop = document.querySelector('.sticky-top');
+    const fixedBottom = document.querySelector('.fixed-bottom');
+    const offcanvas = document.querySelector('.offcanvas');
+
+    offcanvas.addEventListener('show.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'visible';
+      fixedBottom.style.overflow = 'visible';
+    });
+
+    offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'hidden';
+      fixedBottom.style.overflow = 'hidden';
+    });
+
+  </script>
+
+  <script>
+    const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper div');
+    const song = document.querySelector('#song');
+    let isPlaying = false;
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+      // localStorage.setItem('opened', 'true');
+      playAudio();
+    }
+
+    function playAudio() {
+      song.volume = 0.8;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause();
+        audioIcon.classList.remove('tengkorak');
+        audioIcon.classList.add('tengkorak-close');
+      } else {
+        song.play();
+        audioIcon.classList.add('tengkorak');
+        audioIcon.classList.remove('tengkorak-close');
+      }
+
+      isPlaying = !isPlaying;
+    }
+
+    // if (!localStorage.getItem('opened')) {
+    //   disableScroll();
+    // }
+    disableScroll();
+  </script>
+
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('n') || '';
+    const namaContainer = document.querySelector('.hero h4 span');
+    namaContainer.innerText = `${nama},`.replace(/ ,$/, ',');
+
+    document.querySelector('#nama').value = nama;
+  </script>
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  
+</body>
+
+</html>
